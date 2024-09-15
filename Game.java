@@ -1,17 +1,26 @@
 import java.util.Map;
 
 public class Game {
+    final static String title = "Bus Pass";
+    
     public static void main(String[] args) {
         String[] trashTable = {
-            "drink",
-            "snack",
+            "water_half",
+            "snack_half",
             "caffeine_half",
             "beer_half",
             "change_half"
         };
         Map<String, Float> storeItems = Map.ofEntries(
-            Map.entry("bus_pass", 25.00f)
+            Map.entry("bus_pass", 25f),
+            Map.entry("water_full", 3f),
+            Map.entry("snack_full", 3f),
+            Map.entry("bathroom", 2f),
+            Map.entry("beer_full", 4f),
+            Map.entry("caffeine_full", 4f),
+            Map.entry("sink", 3f)
         );
+
         
     }
 
