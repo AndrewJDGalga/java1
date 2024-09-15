@@ -19,17 +19,16 @@ public class Game {
             Map.entry("sink", 3f)
         );
         Player player = new Player();
-        boolean play = true;
+        boolean play = false;
 
         System.out.println("Welcome to Bus Ticket");
         System.out.println("Goal: Get enough cash together through begging and scrounging to buy a bus ticket before time runs out.\n");
 
-
-        /* 
         do {
-
+            System.out.printf("You have: $%.2f\n", player.cash);
+            System.out.println("Your dirtiness is " + player.dirty + " out of " + Player.dirtyMax + ".");
+            System.out.println("Your quenched status is: " + player.getQuenchedStatus() + ".");
         } while(play);
-        */
     }
 
     static int rollD6() {
@@ -49,4 +48,12 @@ class Player {
     int sated = satedMax;
     int quenched = quenchedMax;
     float cash = 0f;
+
+    public String getQuenchedStatus() {
+        String status = "";
+            if(quenched >= quenchedMax - 1) status = "Feeling good";
+            else if (quenched >= quenchedMax - 3) status = "Feeling a little thirsty";
+            else status = "Could really use a drink";
+        return status;
+    }
 }
