@@ -1,4 +1,4 @@
-
+import java.util.Map;
 
 public class Game {
     public static void main(String[] args) {
@@ -9,7 +9,9 @@ public class Game {
             "beer_half",
             "change_half"
         };
-
+        Map<String, Float> storeItems = Map.ofEntries(
+            Map.entry("bus_pass", 25.00f)
+        );
         
     }
 
