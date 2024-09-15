@@ -1,8 +1,6 @@
 import java.util.Map;
 
 public class Game {
-    final static String title = "Bus Pass";
-    
     public static void main(String[] args) {
         String[] trashTable = {
             "water_half",
@@ -20,8 +18,18 @@ public class Game {
             Map.entry("caffeine_full", 4f),
             Map.entry("sink", 3f)
         );
+        Player player = new Player();
+        boolean play = true;
 
-        
+        System.out.println("Welcome to Bus Ticket");
+        System.out.println("Goal: Get enough cash together through begging and scrounging to buy a bus ticket before time runs out.\n");
+
+
+        /* 
+        do {
+
+        } while(play);
+        */
     }
 
     static int rollD6() {
@@ -40,5 +48,5 @@ class Player {
     int pee = 0;
     int sated = satedMax;
     int quenched = quenchedMax;
-    
+    float cash = 0f;
 }
