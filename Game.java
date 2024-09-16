@@ -57,6 +57,10 @@ class Player {
         return status;
     }
     public String getSatiatedStatus() {
-        
+        String status = "";
+            if(satiated >= satiatedMax - 1) status = "Feeling good.";
+            else if (satiated >= satiatedMax - 3) status = "Feeling a little hungry.";
+            else status = "Could really use a bite.";
+        return status;
     }
 }
