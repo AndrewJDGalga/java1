@@ -27,7 +27,7 @@ public class Game {
         do {
             System.out.printf("You have: $%.2f\n", player.cash);
             System.out.println("Your dirtiness is " + player.dirty + " out of " + Player.dirtyMax + ".");
-            System.out.println("Your quenched status is: " + player.getQuenchedStatus() + ".");
+            System.out.println("Your quenched status is: " + player.getQuenchedStatus());
         } while(play);
     }
 
@@ -41,19 +41,22 @@ class Player {
     static final int poopMax = 6;
     static final int peeMax = 4;
     static final int quenchedMax = 6;
-    static final int satedMax = 6;
+    static final int satiatedMax = 6;
     int dirty = 0;
     int poop = 0;
     int pee = 0;
-    int sated = satedMax;
+    int satiated = satiatedMax;
     int quenched = quenchedMax;
     float cash = 0f;
 
     public String getQuenchedStatus() {
         String status = "";
-            if(quenched >= quenchedMax - 1) status = "Feeling good";
-            else if (quenched >= quenchedMax - 3) status = "Feeling a little thirsty";
-            else status = "Could really use a drink";
+            if(quenched >= quenchedMax - 1) status = "Feeling good.";
+            else if (quenched >= quenchedMax - 3) status = "Feeling a little thirsty.";
+            else status = "Could really use a drink.";
         return status;
+    }
+    public String getSatiatedStatus() {
+        
     }
 }
