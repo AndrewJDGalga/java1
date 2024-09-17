@@ -1,3 +1,5 @@
+import java.util.Arrays; 
+
 class Player {
     static final int dirtyMax = 6;
     static final int poopMax = 6;
@@ -16,7 +18,10 @@ class Player {
     float cash = 0f;
 
     public void rollDice() {
-        
+        Arrays.fill(currentDice,0,maxDice, 0);
+        for(int i = 0; i < currentDiceCount; i++) {
+            System.out.println(currentDice[i]);
+        }
     }
     public String getQuenchedStatus() {
         String status = "";

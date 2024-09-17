@@ -1,7 +1,10 @@
 public class Test {
     public static void main(String[] args) {
-        playerThirstTest();
-        playerSatiationTest();
+        //playerThirstTest();
+        //playerSatiationTest();
+
+        Player pTest = new Player();
+        pTest.rollDice();
     }
     static void playerSatiationTest() {
         int noHunger = 6;
