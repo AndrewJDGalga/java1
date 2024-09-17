@@ -4,6 +4,10 @@ class Player {
     static final int peeMax = 4;
     static final int quenchedMax = 6;
     static final int satiatedMax = 6;
+    static final int minDice = 2;
+    static final int maxDice = 8;
+    int[] currentDice = new int[maxDice];
+    private int currentDiceCount = 3; 
     int dirty = 0;
     int poop = 0;
     int pee = 0;
