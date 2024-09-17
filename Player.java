@@ -15,6 +15,9 @@ class Player {
     int quenched = quenchedMax;
     float cash = 0f;
 
+    public void rollDice() {
+        
+    }
     public String getQuenchedStatus() {
         String status = "";
             if(quenched >= quenchedMax - 1) status = "Feeling moist.";

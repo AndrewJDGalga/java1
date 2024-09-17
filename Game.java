@@ -31,8 +31,4 @@ public class Game {
             System.out.println("Your satiated status is: " + player.getSatiatedStatus());
         } while(play);
     }
-
-    static int rollD6() {
-        return (int)(Math.random() * 6) + 1;
-    }
 }
