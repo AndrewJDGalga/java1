@@ -2,7 +2,10 @@ public class Test {
     public static void main(String[] args) {
         //playerThirstTest();
         //playerSatiationTest();
-
+        //playerDiceTest();
+        
+    }
+    static void playerDiceTest() {
         Player pTest = new Player();
         pTest.rollDice();
         System.out.println(pTest.getCurrentDice());
