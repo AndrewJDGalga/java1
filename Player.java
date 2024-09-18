@@ -17,6 +17,22 @@ class Player {
     int quenched = quenchedMax;
     float cash = 0f;
 
+    public boolean increaseDice() {
+        return setDice(1);
+    }
+    public boolean decreaseDice() {
+        return setDice(-1);
+    }
+    private boolean setDice(int val) {
+        boolean success = true;
+        if(currentDiceCount+val <= maxDice || currentDiceCount - val >= minDice) {
+            currentDiceCount += val;
+            System.out.println(currentDiceCount);
+            //todo: modify dice
+        }
+        else success = false;
+        return success;
+    }
     public String getCurrentDice() {
         return Arrays.toString(currentDice);
     }

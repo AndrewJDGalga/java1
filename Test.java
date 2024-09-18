@@ -2,13 +2,15 @@ public class Test {
     public static void main(String[] args) {
         //playerThirstTest();
         //playerSatiationTest();
-        //playerDiceTest();
+        playerDiceTest();
         
     }
     static void playerDiceTest() {
         Player pTest = new Player();
         pTest.rollDice();
-        System.out.println(pTest.getCurrentDice());
+        //System.out.println(pTest.getCurrentDice());
+
+        pTest.increaseDice();
     }
     static void playerSatiationTest() {
         int noHunger = 6;
