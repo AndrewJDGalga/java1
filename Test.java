@@ -5,6 +5,7 @@ public class Test {
 
         Player pTest = new Player();
         pTest.rollDice();
+        System.out.println(pTest.getCurrentDice());
     }
     static void playerSatiationTest() {
         int noHunger = 6;

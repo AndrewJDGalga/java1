@@ -17,10 +17,13 @@ class Player {
     int quenched = quenchedMax;
     float cash = 0f;
 
+    public String getCurrentDice() {
+        return Arrays.toString(currentDice);
+    }
     public void rollDice() {
         Arrays.fill(currentDice,0,maxDice, 0);
         for(int i = 0; i < currentDiceCount; i++) {
-            System.out.println(currentDice[i]);
+            currentDice[i] = SystemSupport.rollD6();
         }
     }
     public String getQuenchedStatus() {
