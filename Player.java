@@ -26,7 +26,7 @@ class Player {
     private boolean setDice(int val) {
         boolean success = true;
         if(val < 0 && currentDiceCount+val >= minDice) {
-            currentDice[currentDiceCount] = 0;
+            currentDice[currentDiceCount-1] = 0;
             currentDiceCount += val;
         }else if(val > 0 && currentDiceCount+val <= maxDice){
             currentDice[currentDiceCount] = SystemSupport.rollD6();

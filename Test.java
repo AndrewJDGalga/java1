@@ -10,13 +10,23 @@ public class Test {
         pTest.rollDice();
         System.out.println(pTest.getCurrentDice());
 
+        System.out.println("Decrease dice: empty");
+        pTest.decreaseDice();
+        System.out.println(pTest.getCurrentDice());
+
+        System.out.println("Increase dice: empty");
         pTest.increaseDice();
         System.out.println(pTest.getCurrentDice());
 
-        for(int i = 0; i <= (pTest.maxDice + pTest.maxDice); i++){
+        System.out.println("Increase dice: loop");
+        for(int i = 0; i <= (Player.maxDice + Player.maxDice); i++){
             pTest.increaseDice();
             System.out.println(pTest.getCurrentDice());
         }
+
+        System.out.println("Decrease dice: full");
+        pTest.decreaseDice();
+        System.out.println(pTest.getCurrentDice());
     }
     static void playerSatiationTest() {
         int noHunger = 6;
