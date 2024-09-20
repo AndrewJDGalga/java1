@@ -26,11 +26,14 @@ public class Game {
 
         do {
             playerStatus();
-
+            locationStatus();
+            
         } while(play);
     }
 
-    
+    static void locationStatus() {
+
+    }
 
     static void playerStatus() {
         System.out.printf("You have: $%.2f\n", player.cash);
