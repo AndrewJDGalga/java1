@@ -32,7 +32,6 @@ class Player {
             currentDice[currentDiceCount] = SystemSupport.rollD6();
             currentDiceCount += val;
         }
-        //if(currentDiceCount+val <= maxDice || currentDiceCount - val >= minDice)currentDiceCount += val;
         else success = false;
         return success;
     }

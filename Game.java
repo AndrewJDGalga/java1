@@ -25,10 +25,17 @@ public class Game {
         System.out.println("Goal: Get enough cash together through begging and scrounging to buy a bus ticket before time runs out.\n");
 
         do {
-            System.out.printf("You have: $%.2f\n", player.cash);
-            System.out.println("Your dirtiness is " + player.dirty + " out of " + Player.dirtyMax + ".");
-            System.out.println("Your quenched status is: " + player.getQuenchedStatus());
-            System.out.println("Your satiated status is: " + player.getSatiatedStatus());
+            playerStatus();
+
         } while(play);
+    }
+
+    
+
+    static void playerStatus() {
+        System.out.printf("You have: $%.2f\n", player.cash);
+        System.out.println("Your dirtiness is " + player.dirty + " out of " + Player.dirtyMax + ".");
+        System.out.println("Your quenched status is: " + player.getQuenchedStatus());
+        System.out.println("Your satiated status is: " + player.getSatiatedStatus());
     }
 }
