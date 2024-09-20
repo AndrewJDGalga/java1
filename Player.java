@@ -25,11 +25,14 @@ class Player {
     }
     private boolean setDice(int val) {
         boolean success = true;
-        if(currentDiceCount+val <= maxDice || currentDiceCount - val >= minDice) {
+        if(val < 0 && currentDiceCount+val >= minDice) {
+            currentDice[currentDiceCount] = 0;
             currentDiceCount += val;
-            System.out.println(currentDiceCount);
-            //todo: modify dice
+        }else if(val > 0 && currentDiceCount+val <= maxDice){
+            currentDice[currentDiceCount] = SystemSupport.rollD6();
+            currentDiceCount += val;
         }
+        //if(currentDiceCount+val <= maxDice || currentDiceCount - val >= minDice)currentDiceCount += val;
         else success = false;
         return success;
     }
