@@ -12,6 +12,11 @@ public class Test {
 
         pTest.increaseDice();
         System.out.println(pTest.getCurrentDice());
+
+        for(int i = 0; i <= (pTest.maxDice + pTest.maxDice); i++){
+            pTest.increaseDice();
+            System.out.println(pTest.getCurrentDice());
+        }
     }
     static void playerSatiationTest() {
         int noHunger = 6;
