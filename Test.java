@@ -27,6 +27,12 @@ public class Test {
         System.out.println("Decrease dice: full");
         pTest.decreaseDice();
         System.out.println(pTest.getCurrentDice());
+
+        System.out.println("Decrease dice: loop");
+        for(int i = 0; i <= (Player.maxDice + Player.maxDice); i++){
+            pTest.decreaseDice();
+            System.out.println(pTest.getCurrentDice());
+        }
     }
     static void playerSatiationTest() {
         int noHunger = 6;
