@@ -8,10 +8,11 @@ public class Test {
     }
     static void locationTest() {
         Location lTest = new Location("Test");
-        System.out.println(lTest.curPatrons.length);
+        System.out.println("Generating " + lTest.curPatrons.length + " patrons.");
         for(int i = 0; i < lTest.curPatrons.length; i++) {
             System.out.println(i + " " + lTest.curPatrons[i].type);
             System.out.println(lTest.curPatrons[i].meetOrExceed);
+            System.out.println(lTest.curPatrons[i].description);
         }
     }
     static void patronTest() {
