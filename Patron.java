@@ -12,7 +12,5 @@ class Patron {
     public Patron(){
         type = SystemSupport.randomMapKey(Patron.types);
         meetOrExceed = Patron.types.get(type);
-    }
-
-    
+    }    
 }

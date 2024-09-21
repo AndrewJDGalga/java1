@@ -3,8 +3,14 @@ public class Test {
         //playerThirstTest();
         //playerSatiationTest();
         //playerDiceTest();
-        patronTest();
-        
+        //patronTest();
+        locationTest();
+    }
+    static void locationTest() {
+        Location lTest = new Location("Test");
+        for(int i = 0; i < lTest.curPatrons.length; i++) {
+            System.out.println(lTest.curPatrons[i]);
+        }
     }
     static void patronTest() {
         System.out.println("Correct types:");

@@ -1,10 +1,9 @@
 class Location {
-    static final int minPatrons = 1;
-    static final int maxPatrons = 8;
-    int curPatrons;
-    
+    Patron[] curPatrons;
     String locationName;
+
     Location(String name){
         locationName = name;
+        curPatrons = new Patron[SystemSupport.rollD8() + 1];
     }
 }
