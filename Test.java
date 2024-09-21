@@ -3,14 +3,13 @@ public class Test {
         //playerThirstTest();
         //playerSatiationTest();
         //playerDiceTest();
-
-        //Patron pTest = new Patron();
+        patronTest();
+        
+    }
+    static void patronTest() {
         for(int i = 0; i < 10; i++) {
             System.out.println(SystemSupport.randomMapKey(Patron.types));
-            //System.out.println(pTest.randomTypeKey());
         }
-
-        
     }
     static void playerDiceTest() {
         Player pTest = new Player();
