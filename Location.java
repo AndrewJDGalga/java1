@@ -9,4 +9,14 @@ class Location {
             curPatrons[i] = new Patron();
         }
     }
+    /*
+    public String[] getPatronDescriptions() {
+
+    }
+    */
+    /* 
+    public boolean tryPatron(int selection) {
+
+    }
+    */
 }
