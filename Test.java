@@ -24,7 +24,12 @@ public class Test {
         }
 
         System.out.print("Patron descriptions array are same length: ");
-        System.out.println(lTest.curPatrons.length == lTest.getPatronDescriptions().length);
+        String[] descriptions = lTest.getPatronDescriptions();
+        System.out.println(lTest.curPatrons.length == descriptions.length);
+        System.out.println("Any mismatch?");
+        for(int i = 0; i < descriptions.length; i++) {
+            if(!lTest.curPatrons[i].description.equals(descriptions[i])) System.out.println("Mismatch between '" + lTest.curPatrons[i].description + " and " + descriptions[i]); 
+        }
     }
     static void patronTest() {
         System.out.println("Correct types:");
