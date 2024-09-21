@@ -33,7 +33,11 @@ public class Game {
     }
 
     static void locationStatus(Location loc) {
-        
+        String[] descriptions = loc.getPatronDescriptions();
+        System.out.println("You spot some other customers to solicit for the money you need. You see:");
+        for(int i = 0; i < descriptions.length; i++) {
+            System.out.println("Customer " + (i+1) + " " + descriptions[i]);
+        }
     }
 
     static void playerStatus(Player player) {
