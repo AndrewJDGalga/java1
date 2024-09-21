@@ -25,7 +25,7 @@ public class Game {
         System.out.println("Goal: Get enough cash together through begging and scrounging to buy a bus ticket before time runs out.\n");
 
         do {
-            playerStatus();
+            playerStatus(player);
             locationStatus();
             
         } while(play);
@@ -35,7 +35,7 @@ public class Game {
 
     }
 
-    static void playerStatus() {
+    static void playerStatus(Player player) {
         System.out.printf("You have: $%.2f\n", player.cash);
         System.out.println("Your dirtiness is " + player.dirty + " out of " + Player.dirtyMax + ".");
         System.out.println("Your quenched status is: " + player.getQuenchedStatus());

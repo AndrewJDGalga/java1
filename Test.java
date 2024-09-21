@@ -2,8 +2,9 @@ public class Test {
     public static void main(String[] args) {
         //playerThirstTest();
         //playerSatiationTest();
-        playerDiceTest();
-        
+        //playerDiceTest();
+
+        System.out.println(SystemSupport.randomMapKey(Patron.types));
     }
     static void playerDiceTest() {
         Player pTest = new Player();
