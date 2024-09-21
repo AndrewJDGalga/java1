@@ -1,6 +1,15 @@
 import java.util.Map;
 
-class Patron {
+
+
+class Patron {   
+    public enum TYPES {
+        LONELY (2),
+        SOLO (3),
+        FAMILY (4),
+        RICH (5);
+    }
+
     static Map<String, Integer> types = Map.ofEntries(
         Map.entry("lonely", 2),
         Map.entry("solo", 3),
