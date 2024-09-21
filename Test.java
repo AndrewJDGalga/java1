@@ -4,8 +4,10 @@ public class Test {
         //playerSatiationTest();
         //playerDiceTest();
 
+        //Patron pTest = new Patron();
         for(int i = 0; i < 10; i++) {
             System.out.println(SystemSupport.randomMapKey(Patron.types));
+            //System.out.println(pTest.randomTypeKey());
         }
 
         

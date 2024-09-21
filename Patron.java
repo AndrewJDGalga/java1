@@ -7,8 +7,11 @@ class Patron {
         Map.entry("rich", 5)
     );
     String type = "";
+    //Random rand;
 
     public Patron(){
         
     }
+
+    
 }
