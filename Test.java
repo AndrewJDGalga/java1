@@ -4,7 +4,11 @@ public class Test {
         //playerSatiationTest();
         //playerDiceTest();
 
-        System.out.println(SystemSupport.randomMapKey(Patron.types));
+        for(int i = 0; i < 10; i++) {
+            System.out.println(SystemSupport.randomMapKey(Patron.types));
+        }
+
+        
     }
     static void playerDiceTest() {
         Player pTest = new Player();
