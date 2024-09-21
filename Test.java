@@ -14,6 +14,14 @@ public class Test {
             System.out.println(lTest.curPatrons[i].meetOrExceed);
             System.out.println(lTest.curPatrons[i].description);
         }
+
+        System.out.println("Regenerating patrons.");
+        lTest.generatePatrons();
+        for(int i = 0; i < lTest.curPatrons.length; i++) {
+            System.out.println(i + " " + lTest.curPatrons[i].type);
+            System.out.println(lTest.curPatrons[i].meetOrExceed);
+            System.out.println(lTest.curPatrons[i].description);
+        }
     }
     static void patronTest() {
         System.out.println("Correct types:");
