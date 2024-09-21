@@ -22,6 +22,9 @@ public class Test {
             System.out.println(lTest.curPatrons[i].meetOrExceed);
             System.out.println(lTest.curPatrons[i].description);
         }
+
+        System.out.print("Patron descriptions array are same length: ");
+        System.out.println(lTest.curPatrons.length == lTest.getPatronDescriptions().length);
     }
     static void patronTest() {
         System.out.println("Correct types:");

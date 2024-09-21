@@ -12,11 +12,14 @@ class Location {
             curPatrons[i] = new Patron();
         }
     }
-    /* 
     public String[] getPatronDescriptions() {
-
+        String[] arrDescriptions = new String[curPatrons.length];
+        for(int i = 0; i < curPatrons.length; i++) {
+            arrDescriptions[i] = curPatrons[i].description;
+        }
+        return arrDescriptions;
     }
-    */
+    
     /* 
     public boolean tryPatron(int selection) {
 

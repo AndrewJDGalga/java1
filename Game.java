@@ -19,6 +19,7 @@ public class Game {
             Map.entry("sink", 3f)
         );
         Player player = new Player();
+        Location gStation = new Location("The Gas Station");
         boolean play = false;
 
         System.out.println("Welcome to Bus Ticket");
@@ -26,13 +27,13 @@ public class Game {
 
         do {
             playerStatus(player);
-            locationStatus();
+            locationStatus(gStation);
             
         } while(play);
     }
 
-    static void locationStatus() {
-
+    static void locationStatus(Location loc) {
+        
     }
 
     static void playerStatus(Player player) {
