@@ -9,6 +9,9 @@ final class SystemSupport {
     static int rollD8() {
         return rollDie(8, 1);
     }
+    static int rollD4() {
+        return rollDie(4, 1);
+    }
     private static int rollDie(int max, int min) {
         return (int)(Math.random() * max) + min;
     }
