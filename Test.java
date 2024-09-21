@@ -7,8 +7,11 @@ public class Test {
         
     }
     static void patronTest() {
+        System.out.println("Correct types:");
         for(int i = 0; i < 10; i++) {
-            System.out.println(SystemSupport.randomMapKey(Patron.types));
+            Patron pTest = new Patron();
+            System.out.println(pTest.type);
+            System.out.println(pTest.meetOrExceed);
         }
     }
     static void playerDiceTest() {

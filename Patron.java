@@ -6,11 +6,12 @@ class Patron {
         Map.entry("family", 4),
         Map.entry("rich", 5)
     );
-    String type = "";
-    //Random rand;
+    String type;
+    int meetOrExceed;
 
     public Patron(){
-        
+        type = SystemSupport.randomMapKey(Patron.types);
+        meetOrExceed = Patron.types.get(type);
     }
 
     
