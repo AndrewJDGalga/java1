@@ -23,8 +23,10 @@ class Patron {
         Map.entry("family", new String[]{"is arguing with their spouse.","is trying to wrangle a few wild children.", "is trying to talk to their elder offspring.", "is not especially notable."}),
         Map.entry("rich", new String[]{"is observes all with an expression of disdain.","is standing next to a very shiny car.", "is wearing very fine clothes.", "is not especially notable."})
     );
+    String[] states = {"just pulled up.", "figuring the transaction.", "waiting on the pump.", "getting ready to leave."};
     String type;
     String description;
+    String state;
     int meetOrExceed;
 
     public Patron(){
