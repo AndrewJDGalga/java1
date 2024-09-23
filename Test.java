@@ -3,8 +3,8 @@ public class Test {
         //playerThirstTest();
         //playerSatiationTest();
         //playerDiceTest();
-        //patronTest();
-        locationTest();
+        patronTest();
+        //locationTest();
     }
     static void locationTest() {
         Location lTest = new Location("Test");
@@ -32,11 +32,12 @@ public class Test {
         }
     }
     static void patronTest() {
-        System.out.println("Correct types:");
+        System.out.println("Patrons:");
         for(int i = 0; i < 10; i++) {
             Patron pTest = new Patron();
             System.out.println(pTest.type);
             System.out.println(pTest.meetOrExceed);
+            System.out.println(pTest.state);
         }
     }
     static void playerDiceTest() {
