@@ -32,7 +32,8 @@ class Patron {
     public Patron(){
         type = SystemSupport.randomMapKey(Patron.types);
         description = Patron.descriptions.get(type)[SystemSupport.rollD4()-1];
-        state = Patron.states[SystemSupport.rollD4()-1];
+        //state = Patron.states[SystemSupport.rollD4()-1];
+        state = Patron.states[3];
         meetOrExceed = Patron.types.get(type);
     }    
 }

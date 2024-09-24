@@ -7,7 +7,7 @@ class Location {
         generatePatrons();
     }
     public void generatePatrons() {
-        depopulate();
+        depopulate(curPatrons);
         populate(curPatrons);
 
         /*
@@ -26,8 +26,12 @@ class Location {
             }
         }
     }
-    private void depopulate() {
-
+    public void depopulate(Patron[] arr) {
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] != null && arr[i].state == "getting ready to leave.") {
+                arr[i] = null;
+            }
+        }
     }
     public String[] getPatronDescriptions() {
         String[] arrDescriptions = new String[curPatrons.length];

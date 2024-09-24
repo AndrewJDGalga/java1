@@ -4,8 +4,9 @@ public class Test {
         //playerSatiationTest();
         //playerDiceTest();
         //patronTest();
-        //locationTest();
-
+        locationTest();
+    }
+    static void locationTest() {
         Location lTest = new Location("Test");
         System.out.println("Populated after instancing:");
         for(int i = 0; i < lTest.curPatrons.length && lTest.curPatrons[i] != null; i++){
@@ -15,35 +16,17 @@ public class Test {
         for(int i = 0; i < 100; i++){
             lTest.generatePatrons();
         }
-        
         System.out.println("Filled after 100 runs:");
         for(int i = 0; i < lTest.curPatrons.length && lTest.curPatrons[i] != null; i++){
             System.out.println(lTest.curPatrons[i].type);
         }
-    }
-    static void locationTest() {
-        Location lTest = new Location("Test");
-        System.out.println("Generating " + lTest.curPatrons.length + " patrons.");
-        for(int i = 0; i < lTest.curPatrons.length; i++) {
-            System.out.println(i + " " + lTest.curPatrons[i].type);
-            System.out.println(lTest.curPatrons[i].meetOrExceed);
-            System.out.println(lTest.curPatrons[i].description);
-        }
 
-        System.out.println("Regenerating patrons.");
-        lTest.generatePatrons();
-        for(int i = 0; i < lTest.curPatrons.length; i++) {
-            System.out.println(i + " " + lTest.curPatrons[i].type);
-            System.out.println(lTest.curPatrons[i].meetOrExceed);
-            System.out.println(lTest.curPatrons[i].description);
+        System.out.println("Deleting all");
+        for(int i = 0; i < lTest.curPatrons.length * 2; i++) {
+            lTest.depopulate(lTest.curPatrons);
         }
-
-        System.out.print("Patron descriptions array are same length: ");
-        String[] descriptions = lTest.getPatronDescriptions();
-        System.out.println(lTest.curPatrons.length == descriptions.length);
-        System.out.println("Any mismatch?");
-        for(int i = 0; i < descriptions.length; i++) {
-            if(!lTest.curPatrons[i].description.equals(descriptions[i])) System.out.println("Mismatch between '" + lTest.curPatrons[i].description + " and " + descriptions[i]); 
+        for(int i = 0; i < lTest.curPatrons.length && lTest.curPatrons[i] != null; i++){
+            System.out.println(lTest.curPatrons[i].type);
         }
     }
     static void patronTest() {
