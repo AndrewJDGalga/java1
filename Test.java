@@ -7,6 +7,16 @@ public class Test {
         //locationTest();
 
         Location lTest = new Location("Test");
+        System.out.println("Populated after instancing:");
+        for(int i = 0; i < lTest.curPatrons.length && lTest.curPatrons[i] != null; i++){
+            System.out.println(lTest.curPatrons[i].type);
+        }
+
+        for(int i = 0; i < 100; i++){
+            lTest.generatePatrons();
+        }
+        
+        System.out.println("Filled after 100 runs:");
         for(int i = 0; i < lTest.curPatrons.length && lTest.curPatrons[i] != null; i++){
             System.out.println(lTest.curPatrons[i].type);
         }
