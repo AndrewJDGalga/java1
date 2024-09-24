@@ -3,8 +3,13 @@ public class Test {
         //playerThirstTest();
         //playerSatiationTest();
         //playerDiceTest();
-        patronTest();
+        //patronTest();
         //locationTest();
+
+        Location lTest = new Location("Test");
+        for(int i = 0; i < lTest.curPatrons.length && lTest.curPatrons[i] != null; i++){
+            System.out.println(lTest.curPatrons[i].type);
+        }
     }
     static void locationTest() {
         Location lTest = new Location("Test");
