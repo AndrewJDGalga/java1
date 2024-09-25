@@ -22,6 +22,9 @@ public class Game {
         Location gStation = new Location("The Gas Station");
         boolean play = false;
 
+        int maxTime = 8;
+        int currentTime = 0;
+
         System.out.println("Welcome to Bus Ticket");
         System.out.println("Goal: Get enough cash together through begging and scrounging to buy a bus ticket before time runs out.\n");
 
@@ -29,17 +32,22 @@ public class Game {
             playerStatus(player);
             locationStatus(gStation);
             
+
+            System.out.println("\n--What would you like to do?--");
+            System.out.println("1 = Approach a Customer (spend a die)");
+            System.out.println("2 = Relieve yourself (cheap recovery, possible cost).");
+            System.out.println("3 = Enter the store (expensive recovery, certain cost).");
+            System.out.println("4 = Scrounge in trash (end the turn, random item)");
         } while(play);
     }
 
     static void locationStatus(Location loc) {
         String[] descriptions = loc.getPatronDescriptions();
         System.out.println("You spot some other customers to solicit for the money you need. You see:");
-        for(int i = 0; i < descriptions.length; i++) {
+        for(int i = 0; i < descriptions.length && descriptions[i] != null; i++) {
             System.out.println("Customer " + (i+1) + " " + descriptions[i]);
         }
     }
-
     static void playerStatus(Player player) {
         System.out.printf("You have: $%.2f\n", player.cash);
         System.out.println("Your dirtiness is " + player.dirty + " out of " + Player.dirtyMax + ".");
