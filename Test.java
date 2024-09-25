@@ -22,7 +22,7 @@ public class Test {
         }
 
         System.out.println("Deleting all");
-        for(int i = 0; i < lTest.curPatrons.length * 2; i++) {
+        for(int i = 0; i < lTest.curPatrons.length * 50; i++) {
             lTest.depopulate(lTest.curPatrons);
         }
         for(int i = 0; i < lTest.curPatrons.length && lTest.curPatrons[i] != null; i++){

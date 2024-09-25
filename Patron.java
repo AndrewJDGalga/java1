@@ -27,13 +27,26 @@ class Patron {
     String type;
     String description;
     String state;
+    int statePosition;
     int meetOrExceed;
 
     public Patron(){
         type = SystemSupport.randomMapKey(Patron.types);
         description = Patron.descriptions.get(type)[SystemSupport.rollD4()-1];
         //state = Patron.states[SystemSupport.rollD4()-1];
-        state = Patron.states[3];
+        statePosition = SystemSupport.rollD4();
+        state = Patron.states[statePosition - 1];
         meetOrExceed = Patron.types.get(type);
+    }
+
+    public boolean isLeaving() {
+        boolean shortly = true;
+
+        if(statePosition != states.length) {
+            shortly = false;
+            state = Patron.states[++statePosition - 1];
+        }
+
+        return shortly;
     }    
 }

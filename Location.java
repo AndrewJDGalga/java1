@@ -28,9 +28,14 @@ class Location {
     }
     public void depopulate(Patron[] arr) {
         for(int i = 0; i < arr.length; i++) {
+            /* 
             if(arr[i] != null && arr[i].state == "getting ready to leave.") {
                 arr[i] = null;
+            } else {
+
             }
+            */
+            if(arr[i] != null && arr[i].isLeaving()) arr[i] = null;
         }
     }
     public String[] getPatronDescriptions() {
