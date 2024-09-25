@@ -27,11 +27,10 @@ class Location {
     public String[] getPatronDescriptions() {
         String[] arrDescriptions = new String[curPatrons.length];
 
-        /* 
-        for(int i = 0; i < curPatrons.length; i++) {
-            arrDescriptions[i] = curPatrons[i].description;
+        for(int i = 0, j= 0; i < curPatrons.length; i++) {
+            if(curPatrons[i] != null) arrDescriptions[j++] = curPatrons[i].description;
         }
-        */
+
         return arrDescriptions;
     }
     

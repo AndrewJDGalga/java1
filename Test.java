@@ -21,6 +21,12 @@ public class Test {
             System.out.println(lTest.curPatrons[i].type);
         }
 
+        System.out.println("Descriptions");
+        String[] descStrings = lTest.getPatronDescriptions();
+        for(int i = 0; i < descStrings.length && descStrings[i] != null; i++) {
+            System.out.println(descStrings[i]);
+        }
+
         System.out.println("Deleting all");
         for(int i = 0; i < lTest.curPatrons.length * 50; i++) {
             lTest.depopulate(lTest.curPatrons);
