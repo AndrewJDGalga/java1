@@ -9,13 +9,6 @@ class Location {
     public void generatePatrons() {
         depopulate(curPatrons);
         populate(curPatrons);
-
-        /*
-        curPatrons = new Patron[SystemSupport.rollD8() + 1];
-        for(int i = 0; i < curPatrons.length; i++) {
-            curPatrons[i] = new Patron();
-        }
-        */
     }
     private void populate(Patron[] arr) {
         int randomNewPatrons = SystemSupport.rollD4();
@@ -28,13 +21,6 @@ class Location {
     }
     public void depopulate(Patron[] arr) {
         for(int i = 0; i < arr.length; i++) {
-            /* 
-            if(arr[i] != null && arr[i].state == "getting ready to leave.") {
-                arr[i] = null;
-            } else {
-
-            }
-            */
             if(arr[i] != null && arr[i].isLeaving()) arr[i] = null;
         }
     }

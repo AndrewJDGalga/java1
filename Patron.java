@@ -1,7 +1,6 @@
 import java.util.Map;
 
 
-
 class Patron {
     /* TODO: Refactor post prototype
     public enum TYPES {
@@ -33,7 +32,6 @@ class Patron {
     public Patron(){
         type = SystemSupport.randomMapKey(Patron.types);
         description = Patron.descriptions.get(type)[SystemSupport.rollD4()-1];
-        //state = Patron.states[SystemSupport.rollD4()-1];
         statePosition = SystemSupport.rollD4();
         state = Patron.states[statePosition - 1];
         meetOrExceed = Patron.types.get(type);
@@ -41,12 +39,10 @@ class Patron {
 
     public boolean isLeaving() {
         boolean shortly = true;
-
         if(statePosition != states.length) {
             shortly = false;
             state = Patron.states[++statePosition - 1];
         }
-
         return shortly;
     }    
 }
