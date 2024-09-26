@@ -3,8 +3,10 @@ public class Test {
         //playerThirstTest();
         //playerSatiationTest();
         //playerDiceTest();
+        playerBladderTest();
+        playerBowelsTest();
         //patronTest();
-        locationTest();
+        //locationTest();
     }
     static void locationTest() {
         Location lTest = new Location("Test");
@@ -43,6 +45,36 @@ public class Test {
             System.out.println(pTest.meetOrExceed);
             System.out.println(pTest.state);
         }
+    }
+    static void playerBladderTest() {
+        int veryNeed = 0;
+        int someNeed = 2;
+        int noNeed = 4;
+        Player pTest = new Player();
+
+        pTest.bladder = noNeed;
+        System.out.println("Empty. = " + pTest.getBladderStatus());
+
+        pTest.bladder = someNeed;
+        System.out.println("Could release. = " + pTest.getBladderStatus());
+
+        pTest.bladder = veryNeed;
+        System.out.println("Near to bursting! = " + pTest.getBladderStatus());
+    }
+    static void playerBowelsTest() {
+        int veryNeed = 2;
+        int someNeed = 4;
+        int noNeed = 6;
+        Player pTest = new Player();
+
+        pTest.bowels = noNeed;
+        System.out.println("Nice and empty. = " + pTest.getBowelsStatus());
+
+        pTest.bowels = someNeed;
+        System.out.println("Feeling disquieting rumblings. = " + pTest.getBowelsStatus());
+
+        pTest.bowels = veryNeed;
+        System.out.println("Peeking! = " + pTest.getBowelsStatus());
     }
     static void playerDiceTest() {
         Player pTest = new Player();
