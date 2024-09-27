@@ -44,6 +44,12 @@ class Player {
             currentDice[i] = SystemSupport.rollD6();
         }
     }
+    public void passTime() {
+        if(bowels < bowelsMax) bowels++;
+        if(bladder < bladderMax) bladder++;
+        if(satiated > 0) satiated--;
+        if(quenched > 0) quenched--;
+    }
     public String getBowelsStatus() {
         String status = "Peeking!";
         if(bowels >= bowelsMax - 1) status = "Nice and empty.";
