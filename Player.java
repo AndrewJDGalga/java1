@@ -16,6 +16,7 @@ class Player {
     int satiated = satiatedMax;
     int quenched = quenchedMax;
     float cash = 0f;
+    boolean loseTime = false;
 
     public boolean increaseDice() {
         return setDice(1);
@@ -46,9 +47,19 @@ class Player {
     }
     public void passTime() {
         if(bowels < bowelsMax) bowels++;
+        else {
+            if(SystemSupport.rollD4() <= 1 && dirty < dirtyMax) dirty++;
+        }
         if(bladder < bladderMax) bladder++;
+        else {
+            if(SystemSupport.rollD4() <= 2 && dirty < dirtyMax) dirty++;
+        }
         if(satiated > 0) satiated--;
         if(quenched > 0) quenched--;
+
+        if(satiated <= satiatedMax/2 && quenched <= quenchedMax/2 ) {
+            if(SystemSupport.rollD4() == 1) loseTime = true;
+        }
     }
     public String getBowelsStatus() {
         String status = "Peeking!";
