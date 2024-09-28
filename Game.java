@@ -21,7 +21,7 @@ public class Game {
             Map.entry("sink", 3f)
         );
         Player player = new Player();
-        Location gStation = new Location("The Gas Station");
+        Location gStation = new Location("The Gas Station", 3);
         boolean play = true;
 
         final int maxTime = 8;
@@ -42,7 +42,7 @@ public class Game {
             playerStatus(player);
             locationStatus(gStation);
             
-            int choice = 0;
+            boolean leaveLoop = false;
             do{
                 System.out.println("\n--What would you like to do?--");
                 System.out.println("1 = Approach a Customer (spend a die)");
@@ -52,38 +52,42 @@ public class Game {
                 System.out.println("5 = Quit (no save)");
                 
                 if(scanner.hasNextInt()) {
-                    choice = scanner.nextInt();
+                    leaveLoop = handleChoice(scanner.nextInt());
                 }else {
                     System.out.println("\n---Please enter a number between 1 & 5---");
                     scanner.nextLine();
                 }
-            }while(choice < 1 || choice > 5);
-
-            switch (choice) {
-                case 1:
-                    approachACustomer();
-                    break;
-                case 2:
-                    relieveSelf();
-                    break;
-                case 3:
-                    enterStore();
-                    break;
-                case 4:
-                    scrounge();
-                    break;
-                default:
-                    System.out.println("Ta ta!");
-                    play = false;
-            }
+            }while(!leaveLoop);
         } while(play);
         scanner.close(); //just in case system doesn't cleanup on exit
+    }
+    static boolean handleChoice(int choice) {
+        boolean exit = false;
+        switch (choice) {
+            case 1:
+                approachACustomer();
+                break;
+            case 2:
+                relieveSelf(player, gStation);
+                break;
+            case 3:
+                enterStore();
+                break;
+            case 4:
+                scrounge();
+                break;
+            default:
+                System.out.println("Ta ta!");
+                play = false;
+                exit = true;
+        }
+        return exit;
     }
     static void approachACustomer(){
 
     }
     static void relieveSelf(Player player, Location location) {
-
+        
     }
     static void enterStore() {
 
