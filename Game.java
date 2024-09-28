@@ -22,13 +22,19 @@ public class Game {
         Location gStation = new Location("The Gas Station");
         boolean play = false;
 
-        int maxTime = 8;
+        final int maxTime = 8;
         int currentTime = 0;
 
         System.out.println("Welcome to Bus Ticket");
         System.out.println("Goal: Get enough cash together through begging and scrounging to buy a bus ticket before time runs out.\n");
 
         do {
+            System.out.println((maxTime - ++currentTime) + "hrs remaining.");
+            if(player.isMissTurn()) {
+                System.out.println(Player.missedTurnNotice);
+
+            }
+
             playerStatus(player);
             locationStatus(gStation);
             
