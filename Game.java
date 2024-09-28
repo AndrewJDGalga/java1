@@ -1,4 +1,5 @@
 import java.util.Map;
+import java.util.Scanner;
 
 public class Game {
     public static void main(String[] args) {
@@ -24,6 +25,7 @@ public class Game {
 
         final int maxTime = 8;
         int currentTime = 0;
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to Bus Ticket");
         System.out.println("Goal: Get enough cash together through begging and scrounging to buy a bus ticket before time runs out.\n");
@@ -32,7 +34,9 @@ public class Game {
             System.out.println((maxTime - ++currentTime) + "hrs remaining.");
             if(player.isMissTurn()) {
                 System.out.println(Player.missedTurnNotice);
-
+                player.missTurn = false;
+                scanner.nextLine(); 
+                continue;
             }
 
             playerStatus(player);
@@ -45,6 +49,7 @@ public class Game {
             System.out.println("3 = Enter the store (expensive recovery, certain cost).");
             System.out.println("4 = Scrounge in trash (end the turn, random item)");
         } while(play);
+        scanner.close(); //just in case system doesn't cleanup on exit
     }
 
     static void locationStatus(Location loc) {
