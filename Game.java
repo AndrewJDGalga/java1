@@ -22,7 +22,7 @@ public class Game {
         );
         Player player = new Player();
         Location gStation = new Location("The Gas Station");
-        boolean play = false;
+        boolean play = true;
 
         final int maxTime = 8;
         int currentTime = 0;
@@ -39,7 +39,6 @@ public class Game {
                 scanner.nextLine();
                 continue;
             }
-
             playerStatus(player);
             locationStatus(gStation);
             
@@ -59,6 +58,21 @@ public class Game {
                     scanner.nextLine();
                 }
             }while(choice < 1 || choice > 5);
+
+            switch (choice) {
+                case 1:
+                    
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("Ta ta!");
+                    play = false;
+            }
         } while(play);
         scanner.close(); //just in case system doesn't cleanup on exit
     }
