@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -35,19 +36,29 @@ public class Game {
             if(player.isMissTurn()) {
                 System.out.println(Player.missedTurnNotice);
                 player.missTurn = false;
-                scanner.nextLine(); 
+                scanner.nextLine();
                 continue;
             }
 
             playerStatus(player);
             locationStatus(gStation);
             
-
-            System.out.println("\n--What would you like to do?--");
-            System.out.println("1 = Approach a Customer (spend a die)");
-            System.out.println("2 = Relieve yourself (cheap recovery, possible cost).");
-            System.out.println("3 = Enter the store (expensive recovery, certain cost).");
-            System.out.println("4 = Scrounge in trash (end the turn, random item)");
+            int choice = 0;
+            do{
+                System.out.println("\n--What would you like to do?--");
+                System.out.println("1 = Approach a Customer (spend a die)");
+                System.out.println("2 = Relieve yourself (cheap recovery, possible cost).");
+                System.out.println("3 = Enter the store (expensive recovery, certain cost).");
+                System.out.println("4 = Scrounge in trash (end the turn, random item)");
+                System.out.println("5 = Quit (no save)");
+                
+                if(scanner.hasNextInt()) {
+                    choice = scanner.nextInt();
+                }else {
+                    System.out.println("\n---Please enter a number between 1 & 5---");
+                    scanner.nextLine();
+                }
+            }while(choice < 1 || choice > 5);
         } while(play);
         scanner.close(); //just in case system doesn't cleanup on exit
     }
