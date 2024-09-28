@@ -8,6 +8,7 @@ class Player {
     static final int satiatedMax = 6;
     static final int minDice = 2;
     static final int maxDice = 8;
+    static final String missedTurnNotice = "You lost a turn!";
     int[] currentDice = new int[maxDice];
     private int currentDiceCount = 3; 
     int dirty = 0;
@@ -16,7 +17,7 @@ class Player {
     int satiated = satiatedMax;
     int quenched = quenchedMax;
     float cash = 0f;
-    boolean loseTime = false;
+    public boolean missTurn = false;
 
     public boolean increaseDice() {
         return setDice(1);
@@ -57,9 +58,12 @@ class Player {
         if(satiated > 0) satiated--;
         if(quenched > 0) quenched--;
 
-        if(satiated <= satiatedMax/2 && quenched <= quenchedMax/2 ) {
-            if(SystemSupport.rollD4() == 1) loseTime = true;
+        if(satiated <= satiatedMax/2 && quenched <= quenchedMax/2) {
+            if(SystemSupport.rollD4() == 1) missTurn = true;
         }
+    }
+    public boolean isMissTurn() {
+        return missTurn;
     }
     public String getBowelsStatus() {
         String status = "Peeking!";
