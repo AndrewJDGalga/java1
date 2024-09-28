@@ -1,10 +1,15 @@
 class Location {
     Patron[] curPatrons = new Patron[8];
     String locationName;
+    int vigilance;
 
-    Location(String name){
+    Location(String name, int vigilance){
         locationName = name;
+        this.vigilance = vigilance;
         generatePatrons();
+    }
+    public boolean isSeen(int modifier) {
+        return SystemSupport.rollD8() <= (this.vigilance - modifier);
     }
     public void generatePatrons() {
         depopulate(curPatrons);

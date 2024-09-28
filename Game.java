@@ -61,13 +61,16 @@ public class Game {
 
             switch (choice) {
                 case 1:
-                    
+                    approachACustomer();
                     break;
                 case 2:
+                    relieveSelf();
                     break;
                 case 3:
+                    enterStore();
                     break;
                 case 4:
+                    scrounge();
                     break;
                 default:
                     System.out.println("Ta ta!");
@@ -76,7 +79,18 @@ public class Game {
         } while(play);
         scanner.close(); //just in case system doesn't cleanup on exit
     }
+    static void approachACustomer(){
 
+    }
+    static void relieveSelf(Player player, Location location) {
+
+    }
+    static void enterStore() {
+
+    }
+    static void scrounge() {
+
+    }
     static void locationStatus(Location loc) {
         String[] descriptions = loc.getPatronDescriptions();
         System.out.println("You spot some other customers to solicit for the money you need. You see:");
