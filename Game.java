@@ -45,28 +45,31 @@ public class Game {
             }
             playerStatus(player);
             locationStatus(gStation);
-            
-            int choice = 0;
-            boolean nextHour = false;
-            do{
-                System.out.println("\n--What would you like to do?--");
-                System.out.println("1 = Approach a Customer (spend a die)");
-                System.out.println("2 = Relieve yourself (cheap recovery, possible cost).");
-                System.out.println("3 = Enter the store (expensive recovery, certain cost).");
-                System.out.println("4 = Scrounge in trash (end the turn, random item)");
-                System.out.println("5 = Quit (no save)");
-                
-                if(scanner.hasNextInt()) {
-                    choice = scanner.nextInt();
-                    nextHour = handleChoice(choice, player, gStation);
-                }else {
-                    System.out.println("\n---Please enter a number between 1 & 5---");
-                    scanner.nextLine();
-                }
-            }while(!nextHour);
+            innerLoop();
         } while(play);
         scanner.close(); //just in case system doesn't cleanup on exit
     }
+    
+    static void innerLoop() {
+        int choice = 0;
+        boolean nextHour = false;
+        do{
+            System.out.println("\n--What would you like to do?--");
+            System.out.println("1 = Approach a Customer (spend a die)");
+            System.out.println("2 = Relieve yourself (cheap recovery, possible cost).");
+            System.out.println("3 = Enter the store (expensive recovery, certain cost).");
+            System.out.println("4 = Scrounge in trash (end the turn, random item)");
+            System.out.println("5 = Quit (no save)");
+            
+            if(scanner.hasNextInt()) {
+                choice = scanner.nextInt();
+                nextHour = handleChoice(choice, player, gStation);
+            }else {
+                System.out.println("\n---Please enter a number between 1 & 5---");
+                scanner.nextLine();
+            }
+        }while(!nextHour);
+    }    
     static boolean handleChoice(int choice, Player player, Location location) {
         boolean exit = false;
         switch (choice) {
