@@ -32,7 +32,11 @@ public class Game {
         System.out.println("Goal: Get enough cash together through begging and scrounging to buy a bus ticket before time runs out.\n");
 
         do {
-            System.out.println((maxTime - ++currentTime) + "hrs remaining.");
+            if(currentTime < maxTime) System.out.println((maxTime - ++currentTime) + "hrs remaining.");
+            else {
+                System.out.println("You watch dejectedly as the last bus of the day pushes away from the station. You're out of time. Oh well. Tonight you'll sleep on the street, and tomorrow you'll head towards home.\n\nYou wish you had a chance to see the end of this dream. Maybe, someday, there'll be another one.\n\nGame Over.");
+                break;
+            }
             if(player.isMissTurn()) {
                 System.out.println(Player.missedTurnNotice);
                 player.missTurn = false;
@@ -42,7 +46,8 @@ public class Game {
             playerStatus(player);
             locationStatus(gStation);
             
-            boolean leaveLoop = false;
+            int choice = 0;
+            boolean nextHour = false;
             do{
                 System.out.println("\n--What would you like to do?--");
                 System.out.println("1 = Approach a Customer (spend a die)");
@@ -52,23 +57,24 @@ public class Game {
                 System.out.println("5 = Quit (no save)");
                 
                 if(scanner.hasNextInt()) {
-                    leaveLoop = handleChoice(scanner.nextInt());
+                    choice = scanner.nextInt();
+                    nextHour = handleChoice(choice, player, gStation);
                 }else {
                     System.out.println("\n---Please enter a number between 1 & 5---");
                     scanner.nextLine();
                 }
-            }while(!leaveLoop);
+            }while(!nextHour);
         } while(play);
         scanner.close(); //just in case system doesn't cleanup on exit
     }
-    static boolean handleChoice(int choice) {
+    static boolean handleChoice(int choice, Player player, Location location) {
         boolean exit = false;
         switch (choice) {
             case 1:
                 approachACustomer();
                 break;
             case 2:
-                relieveSelf(player, gStation);
+                relieveSelf(player, location);
                 break;
             case 3:
                 enterStore();
@@ -77,8 +83,6 @@ public class Game {
                 scrounge();
                 break;
             default:
-                System.out.println("Ta ta!");
-                play = false;
                 exit = true;
         }
         return exit;
