@@ -10,7 +10,7 @@ class Player {
     static final int maxDice = 8;
     static final String missedTurnNotice = "You lost a turn!";
     int[] currentDice = new int[maxDice];
-    private int currentDiceCount = 3; 
+    private int currentDiceCount = 3;
     int dirty = 0;
     int bowels = 0;
     int bladder = 0;
@@ -38,7 +38,11 @@ class Player {
         return success;
     }
     public String getCurrentDice() {
-        return Arrays.toString(currentDice);
+        String dice = "";
+        for(int i = 0; i < maxDice; i++) {
+            if(currentDice[i] > 0) dice += String.format("Die %d: %d\n", i, currentDice[i]);
+        }
+        return dice;
     }
     public void rollDice() {
         Arrays.fill(currentDice,0,maxDice, 0);

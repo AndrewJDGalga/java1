@@ -2,14 +2,14 @@ public class Test {
     public static void main(String[] args) {
         //playerThirstTest();
         //playerSatiationTest();
-        //playerDiceTest();
-        playerBladderTest();
-        playerBowelsTest();
+        playerDiceTest();
+        //playerBladderTest();
+        //playerBowelsTest();
         //patronTest();
         //locationTest();
     }
     static void locationTest() {
-        Location lTest = new Location("Test");
+        Location lTest = new Location("Test", 2);
         System.out.println("Populated after instancing:");
         for(int i = 0; i < lTest.curPatrons.length && lTest.curPatrons[i] != null; i++){
             System.out.println(lTest.curPatrons[i].type);
@@ -81,6 +81,7 @@ public class Test {
         pTest.rollDice();
         System.out.println(pTest.getCurrentDice());
 
+        /* 
         System.out.println("Decrease dice: empty");
         pTest.decreaseDice();
         System.out.println(pTest.getCurrentDice());
@@ -104,6 +105,7 @@ public class Test {
             pTest.decreaseDice();
             System.out.println(pTest.getCurrentDice());
         }
+            */
     }
     static void playerSatiationTest() {
         int noHunger = 6;

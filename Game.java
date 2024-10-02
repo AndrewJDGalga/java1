@@ -45,12 +45,12 @@ public class Game {
             }
             playerStatus(player);
             locationStatus(gStation);
-            innerLoop();
+            innerLoop(scanner, player, gStation);
         } while(play);
         scanner.close(); //just in case system doesn't cleanup on exit
     }
-    
-    static void innerLoop() {
+
+    static void innerLoop(Scanner scanner, Player player, Location station) {
         int choice = 0;
         boolean nextHour = false;
         do{
@@ -63,7 +63,7 @@ public class Game {
             
             if(scanner.hasNextInt()) {
                 choice = scanner.nextInt();
-                nextHour = handleChoice(choice, player, gStation);
+                nextHour = handleChoice(choice, player, station);
             }else {
                 System.out.println("\n---Please enter a number between 1 & 5---");
                 scanner.nextLine();
@@ -74,7 +74,7 @@ public class Game {
         boolean exit = false;
         switch (choice) {
             case 1:
-                approachACustomer();
+                approachACustomer(player, location);
                 break;
             case 2:
                 relieveSelf(player, location);
@@ -90,8 +90,8 @@ public class Game {
         }
         return exit;
     }
-    static void approachACustomer(){
-
+    static void approachACustomer(Player player, Location location){
+        
     }
     static void relieveSelf(Player player, Location location) {
         
