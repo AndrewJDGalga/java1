@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 class Location {
     Patron[] curPatrons = new Patron[8];
     String locationName;
@@ -29,14 +31,18 @@ class Location {
             if(arr[i] != null && arr[i].isLeaving()) arr[i] = null;
         }
     }
-    public String[] getPatronDescriptions() {
-        String[] arrDescriptions = new String[curPatrons.length];
-
-        for(int i = 0, j= 0; i < curPatrons.length; i++) {
-            if(curPatrons[i] != null) arrDescriptions[j++] = curPatrons[i].description;
+    public ArrayList<String> getPatronDescriptions() {
+        ArrayList<String> arrDescriptions = new ArrayList<String>();
+        for(int i = 0; i < curPatrons.length; i++) {
+            if(curPatrons[i] != null) arrDescriptions.add(curPatrons[i].description);
         }
-
         return arrDescriptions;
+    }
+    public void printPatronDescriptions() {
+        ArrayList<String> descList = getPatronDescriptions();
+        for(int i = 0; i < descList.size(); i++) {
+            System.out.println("Patron " + (i+1) + " " + descList.get(i));
+        }
     }
     
     /* 
