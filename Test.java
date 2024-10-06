@@ -1,12 +1,27 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
 public class Test {
     public static void main(String[] args) {
         //playerThirstTest();
         //playerSatiationTest();
-        playerDiceTest();
+        //playerDiceTest();
         //playerBladderTest();
         //playerBowelsTest();
         //patronTest();
         //locationTest();
+        customerInteractionTest();
+    }
+    static void customerInteractionTest() {
+        Scanner scanner = new Scanner(System.in);
+        Location lTest = new Location("Test", 1);
+        Player pTest = new Player();
+        String choice = "";
+        
+        do {
+            lTest.printPatronDescriptions();
+            choice = scanner.nextLine();
+        } while(!choice.equals("q"));
     }
     static void locationTest() {
         Location lTest = new Location("Test", 2);
@@ -24,9 +39,9 @@ public class Test {
         }
 
         System.out.println("Descriptions");
-        String[] descStrings = lTest.getPatronDescriptions();
-        for(int i = 0; i < descStrings.length && descStrings[i] != null; i++) {
-            System.out.println(descStrings[i]);
+        ArrayList<String> descStrings = lTest.getPatronDescriptions();
+        for(int i = 0; i < descStrings.size() && descStrings.get(i) != null; i++) {
+            System.out.println(descStrings.get(i));
         }
 
         System.out.println("Deleting all");
