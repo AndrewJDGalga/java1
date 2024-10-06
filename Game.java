@@ -1,6 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Scanner;
+//import java.util.ArrayList;
 
 public class Game {
     public static void main(String[] args) {
@@ -44,7 +45,7 @@ public class Game {
                 continue;
             }
             playerStatus(player);
-            locationStatus(gStation);
+            //locationStatus(gStation);
             innerLoop(scanner, player, gStation);
         } while(play);
         scanner.close(); //just in case system doesn't cleanup on exit
@@ -103,11 +104,14 @@ public class Game {
 
     }
     static void locationStatus(Location loc) {
-        String[] descriptions = loc.getPatronDescriptions();
+        //ArrayList<String> descriptions = loc.getPatronDescriptions();
         System.out.println("You spot some other customers to solicit for the money you need. You see:");
+        loc.printPatronDescriptions();
+        /* 
         for(int i = 0; i < descriptions.length && descriptions[i] != null; i++) {
             System.out.println("Customer " + (i+1) + " " + descriptions[i]);
         }
+        */
     }
     static void playerStatus(Player player) {
         System.out.printf("You have: $%.2f\n", player.cash);
